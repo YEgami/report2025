@@ -273,7 +273,7 @@ class DocumentationAgent:
             "iteration": state.iteration + 1,
         }
     
-    def _conduct_interiews(self, state: InterviewState) -> dict[str, Any]:
+    def _conduct_interviews(self, state: InterviewState) -> dict[str, Any]:
         new_interviews: InterviewResult = self.interview_conductor.run(
             state.user_request, state.personas[-5:]
         )
