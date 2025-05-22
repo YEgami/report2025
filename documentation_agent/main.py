@@ -15,7 +15,7 @@ load_dotenv()
 #ペルソナを表すデータモデル
 class Persona(BaseModel):
     name: str = Field(..., description="ペルソナの名前")
-    background: str = Field(..., description="パーソンの背景")
+    background: str = Field(..., description="ペルソナの背景")
 
 #ペルソナのリストを表すデータモデル
 class Personas(BaseModel):
@@ -53,7 +53,7 @@ class InterviewState(BaseModel):
     iteration: int = Field(
         default=0, description="ペルソナ生成とインタビューの反復回数"
     )
-    is_inforamation_sufficient: bool = Field(
+    is_infomation_sufficient: bool = Field(
         default=False, description="情報が十分かどうか"
     )
     
