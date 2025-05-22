@@ -60,7 +60,7 @@ class InterviewState(BaseModel):
 class PersonaGenerator:
     def __init__(self, llm: ChatOpenAI, k: int=5):
         self.llm = llm.with_structured_output(Personas)
-        self.k
+        self.k = k
     def run(self, user_reuqest: str) -> Personas:
         #プロンプトテンプレ
         prompt = ChatPromptTemplate.from_messages(
