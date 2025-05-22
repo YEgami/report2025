@@ -157,7 +157,7 @@ class InterviewConductor:
             for persona, question, answer in zip(personas, questions, answers)
         ]
 
-class InforamtionEvaluator:
+class InformationEvaluator:
     def __init__(self, llm: ChatOpenAI):
         self.llm = llm.with_structured_output(EvaluationResult)
     
@@ -192,7 +192,7 @@ class InforamtionEvaluator:
         )
         
 
-class RequiementDocumentGenerator:
+class RequirementDocumentGenerator:
     def __init__(self, llm: ChatOpenAI):
         self.llm = llm
     
@@ -237,8 +237,8 @@ class DocumentationAgent:
     def __init__(self, llm:ChatOpenAI, k: Optional[int] = None):
         self.persona_generator = PersonaGenerator(llm=llm, k=k)
         self.interview_conductor = InterviewConductor(llm=llm)
-        self.information_evaluator = InforamtionEvaluator(llm=llm)
-        self.requirements_generator = RequiementDocumentGenerator(llm=llm)
+        self.information_evaluator = InformationEvaluator(llm=llm)
+        self.requirements_generator = RequirementDocumentGenerator(llm=llm)
 
         self.graph = self._create_graph()
 
