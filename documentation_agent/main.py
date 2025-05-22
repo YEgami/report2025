@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from pydantic import BaseModel, Field
+from IPython.display import Image
 
 # .envファイルから環境変数を読み込む
 load_dotenv()
@@ -264,6 +265,7 @@ class DocumentationAgent:
         
         #コンパイル
         complied = workflow.compile()
+        Image(compiled.get_graph().draw_png())
 
         return complied
     
