@@ -261,8 +261,11 @@ class DocumentationAgent:
             {True: "generate_personas", False: "generate_requirements"},
         )
         workflow.add_edge("generate_requirements", END)
+        
+        #コンパイル
+        complied = workflow.compile()
 
-        return workflow.compile()
+        return complied
     
     def _generate_personas(self, state: InterviewState) -> dict[str, Any]:
         new_personas: Personas = self.persona_generator.run(state.user_request)
