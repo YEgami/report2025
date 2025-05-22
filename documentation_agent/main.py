@@ -257,7 +257,7 @@ class DocumentationAgent:
 
         workflow.add_conditional_edges(
             "evaluate_information",
-            lambda state: not state.is_information_sufficient and state.interation <5,
+            lambda state: not state.is_information_sufficient and state.iteration <5,
             {True: "generate_personas", False: "generate_requirements"},
         )
         workflow.add_edge("generate_requirements", END)
