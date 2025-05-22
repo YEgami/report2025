@@ -61,7 +61,7 @@ class PersonaGenerator:
     def __init__(self, llm: ChatOpenAI, k: int=5):
         self.llm = llm.with_structured_output(Personas)
         self.k = k
-    def run(self, user_reuqest: str) -> Personas:
+    def run(self, user_request: str) -> Personas:
         #プロンプトテンプレ
         prompt = ChatPromptTemplate.from_messages(
             [
@@ -162,7 +162,7 @@ class InforamtionEvaluator:
         self.llm = llm.with_structured_output(EvaluationResult)
     
     #ユーザーリクエストとインタビューの評価
-    def run(self, user_reuqest: str, interviews: list[Interview]) -> EvaluationResult:
+    def run(self, user_request: str, interviews: list[Interview]) -> EvaluationResult:
         prompt = ChatPromptTemplate.from_messages(
             [
                 (
