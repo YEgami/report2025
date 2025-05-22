@@ -192,7 +192,7 @@ class InformationEvaluator:
         )
         
 
-class RequirementDocumentGenerator:
+class RequirementsDocumentGenerator:
     def __init__(self, llm: ChatOpenAI):
         self.llm = llm
     
@@ -238,7 +238,7 @@ class DocumentationAgent:
         self.persona_generator = PersonaGenerator(llm=llm, k=k)
         self.interview_conductor = InterviewConductor(llm=llm)
         self.information_evaluator = InformationEvaluator(llm=llm)
-        self.requirements_generator = RequirementDocumentGenerator(llm=llm)
+        self.requirements_generator = RequirementsDocumentGenerator(llm=llm)
 
         self.graph = self._create_graph()
 
