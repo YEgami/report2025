@@ -53,7 +53,7 @@ class InterviewState(BaseModel):
     iteration: int = Field(
         default=0, description="ペルソナ生成とインタビューの反復回数"
     )
-    is_infomation_sufficient: bool = Field(
+    is_information_sufficient: bool = Field(
         default=False, description="情報が十分かどうか"
     )
     
