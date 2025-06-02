@@ -263,11 +263,9 @@ class DocumentationAgent:
         )
         workflow.add_edge("generate_requirements", END)
         
-        #コンパイル
-        complied = workflow.compile()
-        Image(compiled.get_graph().draw_png())
 
-        return complied
+
+        return workflow.compile()
     
     def _generate_personas(self, state: InterviewState) -> dict[str, Any]:
         new_personas: Personas = self.persona_generator.run(state.user_request)
